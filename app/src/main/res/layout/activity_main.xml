@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/img"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.6">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/border1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="urinish"
+                android:textAllCaps="true"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/text_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="@color/white"
+                android:textSize="23sp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:background="@drawable/bottomborder"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="REKORD:"
+                android:textColor="@color/golden"
+                android:layout_margin="10dp"/>
+            <TextView
+                android:id="@+id/record"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="23sp"
+                android:layout_gravity="center"
+                android:textColor="@color/golden"
+                android:layout_margin="10dp"/>
+        </LinearLayout>
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/border2"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="vaqt"
+                android:textAllCaps="true"
+                android:textColor="@color/white" />
+
+            <Chronometer
+                android:id="@+id/text_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="23sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="right">
+        <ImageView
+            android:id="@+id/volume"
+            android:layout_width="50dp"
+            tools:src="@drawable/volume"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="40dp"/>
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8">
+
+        <RelativeLayout
+            android:id="@+id/kontener"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn1"
+                style="@style/KhanPuzzle"
+                android:text="1"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn2"
+                style="@style/KhanPuzzle"
+                android:layout_toRightOf="@id/btn1"
+                android:text="2"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn3"
+                style="@style/KhanPuzzle"
+                android:layout_toRightOf="@id/btn2"
+                android:text="3"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn4"
+                style="@style/KhanPuzzle"
+                android:layout_toRightOf="@id/btn3"
+                android:text="4"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn5"
+                style="@style/KhanPuzzle"
+                android:layout_below="@id/btn1"
+                android:text="5"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn6"
+                style="@style/KhanPuzzle"
+                android:layout_below="@id/btn2"
+                android:layout_toRightOf="@id/btn5"
+                android:text="6"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn7"
+                style="@style/KhanPuzzle"
+                android:layout_below="@id/btn3"
+                android:layout_toRightOf="@id/btn6"
+                android:text="7"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn8"
+                style="@style/KhanPuzzle"
+                android:layout_below="@id/btn4"
+                android:layout_toRightOf="@id/btn7"
+                android:text="8"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn9"
+                style="@style/KhanPuzzle"
+                android:layout_below="@id/btn5"
+                android:text="9"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn10"
+                style="@style/KhanPuzzle"
+                android:layout_toRightOf="@id/btn9"
+                android:layout_below="@id/btn6"
+                android:text="10"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn11"
+                style="@style/KhanPuzzle"
+                android:layout_toRightOf="@id/btn10"
+                android:layout_below="@id/btn7"
+                android:text="11"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn12"
+                style="@style/KhanPuzzle"
+                android:layout_toRightOf="@id/btn11"
+                android:layout_below="@id/btn8"
+                android:text="12"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn13"
+                style="@style/KhanPuzzle"
+                android:layout_below="@id/btn9"
+                android:text="13"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn14"
+                style="@style/KhanPuzzle"
+                android:layout_below="@id/btn10"
+                android:layout_toRightOf="@id/btn5"
+                android:text="14"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn15"
+                style="@style/KhanPuzzle"
+                android:layout_below="@id/btn11"
+                android:layout_toRightOf="@id/btn6"
+                android:text="15"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn16"
+                style="@style/KhanPuzzle"
+                android:layout_below="@id/btn12"
+                android:layout_toRightOf="@id/btn7"
+                android:background="@color/free_box"
+                android:text=""/>
+
+
+
+        </RelativeLayout>
+
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:background="@drawable/border"
+            android:id="@+id/btn_finish"
+            style="@style/KhanPuzzle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="16dp"
+            android:text="Asosiy menyu"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:background="@drawable/border"
+            android:id="@+id/btn_restart"
+            style="@style/KhanPuzzle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="16dp"
+            android:text="qayta urinish"/>
+
+    </LinearLayout>
+
+</LinearLayout>

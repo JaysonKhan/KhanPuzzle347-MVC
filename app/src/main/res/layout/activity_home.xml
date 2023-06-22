@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/img"
+    tools:context=".HomeActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="right">
+        <ImageView
+            android:id="@+id/volumeButton"
+            android:layout_width="50dp"
+            android:layout_gravity="center"
+            tools:src="@drawable/volumeoff"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="50dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2">
+        <ImageView
+            android:padding="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="15dp"
+            android:src="@drawable/puzzle"
+            app:tint="@color/golden" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7"
+        android:orientation="vertical">
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/startGame"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_margin="30dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:background="@drawable/border"
+            android:text="O'ynash"
+            android:textSize="30sp"
+            android:textColor="@color/golden"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/fearless"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:layout_margin="30dp"
+            android:background="@drawable/border"
+            android:text="yuqori natijalar"
+            android:textSize="30sp"
+            android:textColor="@color/golden"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/infoButton"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:layout_margin="30dp"
+            android:background="@drawable/border"
+            android:text="Ma'lumot"
+            android:textSize="30sp"
+            android:textColor="@color/golden"/>
+    </LinearLayout>
+
+
+</LinearLayout>

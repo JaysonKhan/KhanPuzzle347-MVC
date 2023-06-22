@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="KhanPuzzle">
+        <item name="android:layout_width">80dp</item>
+        <item name="android:layout_height">80dp</item>
+        <item name="android:layout_margin">3dp</item>
+        <item name="android:textSize">23sp</item>
+        <item name="android:background">@drawable/box2</item>
+        <item name="android:textColor">@color/golden</item>
+    </style>
+
+    <style name="buttonStyle">
+        <item name="android:layout_gravity">bottom|center</item>
+        <item name="android:layout_width">150dp</item>
+        <item name="android:layout_height">80dp</item>
+        <item name="android:background">@drawable/border</item>
+        <item name="android:textColor">@color/golden</item>
+        <item name="android:textSize">23sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_margin">20dp</item>
+    </style>
+</resources>

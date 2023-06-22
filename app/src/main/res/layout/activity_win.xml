@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img"
+    android:orientation="vertical"
+    tools:context=".WinActivity">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TABRIKLAYMIZ 😁🎉"
+        android:layout_gravity="center|top"
+        android:textColor="@color/white"
+        android:textSize="30dp"
+        android:layout_margin="30dp"/>
+    <TextView
+        android:id="@+id/recordWin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Eng yaxshi natija:  "
+        android:layout_gravity="center|top"
+        android:layout_marginTop="100dp"
+        android:textColor="@color/white"
+        android:textStyle="italic"
+        android:textSize="13dp"/>
+
+    <TextView
+        android:id="@+id/scoreWin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SCORE: "
+        android:layout_gravity="center"
+        android:textColor="@color/white"
+        android:textSize="30dp"
+        android:layout_margin="30dp"/>
+
+
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/backHome"
+        style="@style/buttonStyle"
+        android:text="Asosiy"/>
+
+</FrameLayout>
