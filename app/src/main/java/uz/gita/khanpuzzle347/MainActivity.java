@@ -48,19 +48,6 @@ public class MainActivity extends AppCompatActivity {
     AlertDialog back;
 
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        settings = Settings.getInstance();
-
-        loadWidgets();
-        installClickMethods();
-        loadData();
-        dataToView();
-    }
-
     private void installClickMethods() {
 
         findViewById(R.id.btn_restart).setOnClickListener(v -> {
@@ -195,7 +182,8 @@ public class MainActivity extends AppCompatActivity {
             freeSpace = new SpaceFreeBox(3, 3);
         }
     }
-int getInvCount(int[] arr){
+
+    int getInvCount(int[] arr){
     int inv_count = 0;
     for (int i = 0; i < 15; i++)
         for (int j = i + 1; j < 15; j++)
@@ -203,7 +191,6 @@ int getInvCount(int[] arr){
                 inv_count++;
     return inv_count;
 }
-
 boolean isSolvable(List<Integer> numbers){
     int[][] puzzle = toMatrix(numbers);
         int linearPuzzle[];
@@ -306,6 +293,32 @@ boolean isSolvable(List<Integer> numbers){
     }
 
     @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        settings = Settings.getInstance();
+
+        loadWidgets();
+        installClickMethods();
+        loadData();
+        dataToView();
+    }
+
+    @Override
+    protected void onPause() {
+        settings.pauseMusicO();
+        if (!isWin()) {
+            saveDataToPref();
+            settings.setPlayingStatus(true);
+        } else {
+            settings.setPlayingStatus(false);
+            restart();
+        }
+        super.onPause();
+    }
+
+    @Override
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         textTime.start();
@@ -320,17 +333,15 @@ boolean isSolvable(List<Integer> numbers){
     }
 
     @Override
-    protected void onPause() {
-        if (!isWin()) {
-            saveDataToPref();
-            settings.setPlayingStatus(true);
-        } else {
-            settings.setPlayingStatus(false);
-            restart();
+    protected void onStart() {
+        if (settings.isMusicOn()){
+            settings.startMusic();
+            volumeButton.setImageResource(R.drawable.volume);
+        }else{
+            volumeButton.setImageResource(R.drawable.volumeoff);
         }
-        super.onPause();
+        super.onStart();
     }
-
     @Override
     protected void onResume() {
         if (settings.isMusicOn()){
@@ -340,17 +351,6 @@ boolean isSolvable(List<Integer> numbers){
             volumeButton.setImageResource(R.drawable.volumeoff);
         }
         super.onResume();
-    }
-
-    @Override
-    protected void onStart() {
-        if (settings.isMusicOn()){
-            settings.startMusic();
-            volumeButton.setImageResource(R.drawable.volume);
-        }else{
-            volumeButton.setImageResource(R.drawable.volumeoff);
-        }
-        super.onStart();
     }
 
     @Override

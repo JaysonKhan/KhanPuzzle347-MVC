@@ -35,7 +35,7 @@ public class WinActivity extends AppCompatActivity {
         record = findViewById(R.id.recordWin);
 
         score.setText("SIZ " + scoreText + " Urinishda yutdingiz");
-        record.setText("Eng yaxshi narija:  " + settings.getFirstScore());
+        record.setText("Eng yaxshi natija:  " + settings.getFirstScore());
         home.setOnClickListener(view -> {
             settings.startTouch();
             finish();

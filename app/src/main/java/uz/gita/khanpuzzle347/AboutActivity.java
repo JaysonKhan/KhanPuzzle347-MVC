@@ -39,7 +39,7 @@ public class AboutActivity extends AppCompatActivity {
         });
         instagram.setOnClickListener(view -> {
             settings.startTouch();
-            Uri uri = Uri.parse("https://www.instagram.com/j_khan347/");
+            Uri uri = Uri.parse("https://www.instagram.com/gita.uzofficial/");
             Intent intent = new Intent(Intent.ACTION_VIEW, uri);
             startActivity(intent);
         });

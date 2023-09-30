@@ -1,14 +1,12 @@
 package uz.gita.khanpuzzle347;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import uz.gita.khanpuzzle347.modules.Settings;
 
@@ -18,17 +16,6 @@ public class HomeActivity extends AppCompatActivity {
     private ImageView musicButton;
     private Settings settings;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
-
-        settings = Settings.getInstance();
-
-        settings.setMusic(this);
-        loadView();
-
-    }
     private void loadView() {
         start = findViewById(R.id.startGame);
         chempiones = findViewById(R.id.fearless);
@@ -82,6 +69,23 @@ public class HomeActivity extends AppCompatActivity {
 
 
     @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_home);
+
+        settings = Settings.getInstance();
+
+        settings.setMusic(this);
+        loadView();
+
+    }
+    @Override
+    protected void onPause() {
+        settings.pauseMusicO();
+        super.onPause();
+    }
+
+    @Override
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         boolean musicStatus = savedInstanceState.getBoolean("MUSIC_STATUS", true);
@@ -93,12 +97,6 @@ public class HomeActivity extends AppCompatActivity {
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putBoolean("MUSIC_STATUS", settings.isMusicOn());
-    }
-
-    @Override
-    protected void onPause() {
-        settings.pauseMusicO();
-        super.onPause();
     }
 
     @Override
